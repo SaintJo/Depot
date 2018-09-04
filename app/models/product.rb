@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
    
+    default_scope :oreder => 'title'
+    
     validates :title, :description, :img_url, :presence => true
     validates :price, :numericality => {:grater_than_or_equal => 0.01}
     validates :title, :uniqueness => true
